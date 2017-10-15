@@ -1,15 +1,15 @@
 var svg = d3.select('svg').append('g').attr('transform','translate(100,100)');
 
 //set up variables to hold two versions of the data, one for each year
+var data2000;
 var data2016;
-var data2017;
 
 //set up a tracker variable to watch the button click state
 var clicked = true;
 
 //set up scales to position circles using the data
-var scaleX = d3.scaleLinear().domain([0,400]).range([0, 600]);
-var scaleY = d3.scaleLinear().domain([0,400]).range([400, 0]);  //remember that 0,0 is at the top of the screen! 300 is the lowest value on the y axis
+var scaleX = d3.scalePoint().domain(["16-19","20-24","25-34","35-44","45-54","55-64","65+"]).range([0, 600]);
+var scaleY = d3.scaleLinear().domain([0,1000]).range([400, 0]);  //remember that 0,0 is at the top of the screen! 300 is the lowest value on the y axis
 
 // Add the x Axis
 svg.append("g")
@@ -20,17 +20,17 @@ svg.append("g")
     .call(d3.axisLeft(scaleY));
 
 //import the data from the .csv file
-d3.csv('./data.csv', function(dataIn){
+d3.csv('./incomeData.csv', function(dataIn){
 
 
     //save the objects from the .csv with year = 2016
-    data2016 = dataIn.filter(function(d){
-        return d.year == 2016;
+    data2000 = dataIn.filter(function(d){
+        return d.year == 2000;
     });
 
     //save the objects from the .csv with year = 2017
-    data2017 = dataIn.filter(function(d){
-        return d.year == 2017;
+    data2016 = dataIn.filter(function(d){
+        return d.year == 2016;
     });
 
     svg.append('text')
@@ -47,11 +47,30 @@ d3.csv('./data.csv', function(dataIn){
         .attr('transform', 'translate(-50,250)rotate(270)');
 
     //bind the data to the d3 selection, but don't draw it yet
-    svg.selectAll('circles')
+    svg.selectAll('.womenData')
         .data(data2016)
         .enter()
         .append('circle')
-        .attr('class','dataPoints');
+        .attr('class','womenData')
+        .attr('r',function(d){
+        return 10;
+        })
+        .attr('fill',function(d){
+            return "blue";
+        });
+
+    svg.selectAll('.menData')
+        .data(data2016)
+        .enter()
+        .append('circle')
+        .attr('class','menData')
+.attr('r',function(d){
+        return 10;
+    })
+        .attr('fill',function(d){
+            return "red";
+        });
+
 
     //call the drawPoints function below, and hand it the data2016 variable with the 2016 object array in it
     drawPoints(data2016);
@@ -60,24 +79,30 @@ d3.csv('./data.csv', function(dataIn){
 
 //this function draws the actual data points as circles. It's split from the enter() command because we want to run it many times
 //without adding more circles each time.
-function drawPoints(pointData){
+function drawPoints(pointData) {
 
-    svg.selectAll('.dataPoints')  //select all of the circles with dataPoints class that we made using the enter() commmand above
+    console.log("here")
+
+    svg.selectAll('.womenData')  //select all of the circles with dataPoints class that we made using the enter() commmand above
+        .data(pointData)          //re-attach them to data (necessary for when the data changes from 2016 to 2017)
+        .attr('cx',function(d){   //look up values for all the attributes that might have changed, and draw the new circles
+            return scaleX(d.age);
+        })
+        .attr('cy',function(d){
+            return scaleY(d.women);
+        });
+
+
+    svg.selectAll('.menData')  //select all of the circles with dataPoints class that we made using the enter() commmand above
         .data(pointData)          //re-attach them to data (necessary for when the data changes from 2016 to 201    7)
         .transition()
         .ease(d3.easeSin)
         .duration(400)
-        .attr('cx',function(d){   //look up values for all the attributes that might have changed, and draw the new circles
-            return scaleX(+d.x);
+        .attr('cx', function (d) {   //look up values for all the attributes that might have changed, and draw the new circles
+            return scaleX(d.age);
         })
-        .attr('cy',function(d){
-            return scaleY(+d.y);
-        })
-        .attr('r',function(d){
-            return +d.r;
-        })
-        .attr('fill',function(d){
-            return d.fill;
+        .attr('cy', function (d) {
+            return scaleY(+d.men);
         });
 }
 
