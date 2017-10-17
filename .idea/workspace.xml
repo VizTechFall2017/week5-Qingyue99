@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd235025-f830-4f07-8713-d12eb469272f" name="Default" comment="" />
+    <list default="true" id="fd235025-f830-4f07-8713-d12eb469272f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/switchToRealData/index.js" afterPath="$PROJECT_DIR$/switchToRealData/index.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,8 +19,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/switchToRealData/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-359">
-              <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+            <state relative-caret-position="214">
+              <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -58,7 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/switchToRealData/index.js" />
         <option value="$PROJECT_DIR$/updateAllYears/incomeDataAllYears.csv" />
         <option value="$PROJECT_DIR$/updateAllYears/index.html" />
         <option value="$PROJECT_DIR$/switchToRealData_complete/index.js" />
@@ -66,6 +67,7 @@
         <option value="$PROJECT_DIR$/../week4-Qingyue99/PS02/index.js" />
         <option value="$PROJECT_DIR$/PS01/index.html" />
         <option value="$PROJECT_DIR$/PS01/index.js" />
+        <option value="$PROJECT_DIR$/switchToRealData/index.js" />
       </list>
     </option>
   </component>
@@ -167,17 +169,18 @@
       <workItem from="1508184284952" duration="2108000" />
       <workItem from="1508277490079" duration="10000" />
       <workItem from="1508278236010" duration="1361000" />
-      <workItem from="1508282508116" duration="179000" />
+      <workItem from="1508282508116" duration="268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10380000" />
+    <option name="totallyTimeSpent" value="10469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="248" width="1434" height="813" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24965133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24965133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -322,8 +325,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/switchToRealData/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-359">
-          <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        <state relative-caret-position="214">
+          <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
           <folding />
         </state>
       </provider>

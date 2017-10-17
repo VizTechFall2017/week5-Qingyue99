@@ -102,7 +102,7 @@ function drawPoints(pointData) {
             return scaleX(d.age);
         })
         .attr('cy', function (d) {
-            return scaleY(+d.men);
+            return scaleY(d.men);
         });
 }
 
