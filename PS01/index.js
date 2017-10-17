@@ -17,7 +17,7 @@ d3.csv('./Workoutweek5.csv', function(dataIn) {
 
     console.log(dataIn);
 
-    datahowoften = dataIn.filter(function(d){
+   /* datahowoften = dataIn.filter(function(d){
         return d.howoften == howoften;
     });
 
@@ -25,7 +25,7 @@ d3.csv('./Workoutweek5.csv', function(dataIn) {
     datawithin = dataIn.filter(function(d){
         return d.within == within;
     });
-
+*/
 
     svg.append('text')
         .text("The Frequency of NEU Students Go To Gym (Near Campus)")
